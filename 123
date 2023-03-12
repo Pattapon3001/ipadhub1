@@ -1,0 +1,296 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Ipad Hub", "DarkTheme")
+
+local Tab = Window:NewTab("Ant simulator(test)")
+local Section = Tab:NewSection("test")
+
+Section:NewButton("Barn 1", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-347.513916015625, 35.6432991027832, -16.27239418029785)
+local args = {
+    [1] = workspace.AmbarPlatfroms:FindFirstChild("1")
+}
+
+game:GetService("ReplicatedStorage").Remotes.Client.TakeBarn:FireServer(unpack(args))
+end)
+
+Section:NewButton("Barn 2", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-370.37445068359375, 35.642723083496094, -69.8441162109375)
+local args = {
+    [1] = workspace.AmbarPlatfroms:FindFirstChild("2")
+}
+
+game:GetService("ReplicatedStorage").Remotes.Client.TakeBarn:FireServer(unpack(args))
+end)
+
+Section:NewButton("Barn 3", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-371.3204650878906, 35.642738342285156, -133.6731719970703)
+local args = {
+    [1] = workspace.AmbarPlatfroms:FindFirstChild("3")
+}
+
+game:GetService("ReplicatedStorage").Remotes.Client.TakeBarn:FireServer(unpack(args))
+end)
+
+Section:NewButton("Barn 4", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-340.73895263671875, 35.64319610595703, -195.73255920410156)
+local args = {
+    [1] = workspace.AmbarPlatfroms:FindFirstChild("4")
+}
+
+game:GetService("ReplicatedStorage").Remotes.Client.TakeBarn:FireServer(unpack(args))
+end)
+
+Section:NewButton("Barn 5", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-285.7834167480469, 35.64282989501953, -226.7747344970703)
+local args = {
+    [1] = workspace.AmbarPlatfroms:FindFirstChild("5")
+}
+
+game:GetService("ReplicatedStorage").Remotes.Client.TakeBarn:FireServer(unpack(args))
+end)
+
+local Section = Tab:NewSection("Auto etc")
+
+Section:NewToggle("Auto Dig", "ToggleInfo", function(state)
+    if state then
+_G.Dig1 = true
+while _G.Dig1 do
+     wait(0.1)
+game:GetService("ReplicatedStorage").Remotes.Tools.ToolCollect:FireServer()
+   end
+    else
+_G.Dig1 = false
+    end
+end)
+
+Section:NewToggle("Tp snowflake", "ToggleInfo", function(state)
+        if state then
+_G.tpsf = true
+while _G.tpsf do
+wait()
+for i,v in pairs(game:GetService("Workspace").ClientTokens:GetDescendants()) do
+      if v.Name == "TouchInterest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(0.1)
+end
+end
+end
+    else
+_G.tpsf = false
+end
+end)
+
+Section:NewToggle("Bring Token", "ToggleInfo", function(state)
+    if state then
+_G.BT = true
+while _G.BT do
+ wait(0.1)
+local ClientTokens = game.Players.LocalPlayer.Character.HumanoidRootPart
+for i,v in pairs(game.workspace.ClientTokens:GetChildren()) do
+v.CFrame = ClientTokens.CFrame
+wait(0.2)
+end
+end
+        else
+_G.BT = false
+end
+end)
+
+Section:NewToggle("Auto GingerbreadHouse", "ToggleInfo", function(state)
+    if state then
+_G.Ginger = true
+while _G.Ginger do
+    wait(1)
+game:GetService("ReplicatedStorage").Remotes.Other.GingerSpend:InvokeServer()
+end
+        else
+_G.Ginger = false
+end
+end)
+
+local Tab = Window:NewTab("Quest")
+local Section = Tab:NewSection("Auto Talk NPC")
+
+Section:NewToggle("Donkey", "Quest 1", function(state)
+    if state then
+_G.Q1 = true
+while _G.Q1 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC.Donkey
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q1 = false
+end
+end)
+
+Section:NewToggle("Bear", "Quest 2", function(state)
+    if state then
+_G.Q2 = true
+while _G.Q2 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC.Bear
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q2 = false
+end
+end)
+
+Section:NewToggle("Fox", "Quest 3", function(state)
+    if state then
+_G.Q3 = true
+while _G.Q3 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC.Fox
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q3 = false
+end
+end)
+
+Section:NewToggle("Ram", "Quest4", function(state)
+    if state then
+_G.Q4 = true
+while _G.Q4 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC.Ram
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q4 = false
+end
+end)
+
+Section:NewToggle("Mouse", "Quest5", function(state)
+    if state then
+_G.Q5 = true
+while _G.Q5 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC.Mouse
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q5 = false
+end
+end)
+
+Section:NewToggle("Red Parrot", "Quest6", function(state)
+    if state then
+_G.Q6 = true
+while _G.Q6 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC["Red Parrot"]
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q6 = false
+end
+end)
+
+Section:NewToggle("Blue Parrot", "Quest7", function(state)
+    if state then
+_G.Q7 = true
+while _G.Q7 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC["Blue Parrot"]
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q7 = false
+end
+end)
+
+Section:NewToggle("Santa", "Quest8", function(state)
+    if state then
+_G.Q8 = true
+while _G.Q8 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC.Santa
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q8 = false
+end
+end)
+
+Section:NewToggle("Woodpecker", "Quest9 OR Monkey LOL", function(state)
+    if state then
+_G.Q9 = true
+while _G.Q9 do
+    wait(1)
+local args = {
+    [1] = workspace.Actions.ANPC.Woodpecker
+}
+
+game:GetService("ReplicatedStorage").Remotes.Npcs.TalkNPC:InvokeServer(unpack(args))
+end
+    else
+_G.Q9 = false
+end
+end)
+
+local Tab = Window:NewTab("TP")
+local Section = Tab:NewSection("Field&NPC")
+
+Field = {}
+
+for i,v in pairs(game:GetService("Workspace").FieldZones:GetChildren()) do
+table.insert(Field,v.Name)
+end
+
+Section:NewDropdown("Select Field", " ", Field, function(fz)
+   Select = fz
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.FieldZones[Select].CFrame
+end)
+
+Section:NewButton("Tp", "ButtonInfo", function()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.FieldZones[Select].CFrame
+end)
+
+NPC = {}
+
+for i,v in pairs(game:GetService("Workspace").Actions.ANPC:GetChildren()) do
+table.insert(NPC,v.Name)
+end
+
+Section:NewDropdown("Select NPC", " ", NPC, function(npc1)
+   Select = npc1
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Actions.ANPC[Select].CFrame
+end)
+
+Section:NewButton("Tp", "ButtonInfo", function()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Actions.ANPC[Select].CFrame
+end)
+
+local Tab = Window:NewTab("ToggleUI")
+local Section = Tab:NewSection("")
+
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
+	Library:ToggleUI()
+end)
