@@ -108,34 +108,36 @@ _G.Ginger = false
 end
 end)
 
-local Tab = Window:NewTab("etc")
+
+local Tab = Window:NewTab("Etc")
 local Section = Tab:NewSection("Boss")
 
-Section:NewButton("Frozen", " ", function()
+Section:NewButton("Lock Yeti", " ", function()
 wait(1)
-for i,v in pairs(game:GetService("Workspace").ServerMonsters:GetDescendants()) do
-      if v.Name == "Yeti" then
-v.HumanoidRootPart:Destroy()
+for i,v in pairs(game:GetService("Workspace").ServerMonsters:GetDescendants()) do 
+if v.Name == "Yeti" then 
+v.HumanoidRootPart:Destroy() 
 wait(0.1)
 end
 end
 end)
 
-Section:NewToggle("Forzen Yeti", " ", function(state)
+Section:NewToggle("Loop Lock Yeti", " ", function(state)
     if state then
- _G.FYT = true
- while _G. do
+_G.Yeti1 = true
+while _G.Yeti1 do
 wait(1)
-for i,v in pairs(game:GetService("Workspace").ServerMonsters:GetDescendants()) do
-      if v.Name == "Yeti" then
-v.HumanoidRootPart:Destroy()
+for i,v in pairs(game:GetService("Workspace").ServerMonsters:GetDescendants()) do 
+if v.Name == "Yeti" then 
+v.HumanoidRootPart:Destroy() 
 wait(0.1)
 end
 end
-    else
-_G.FYT = false
 end
-end)
+else
+_G.Yeti1 = false
+end
+    end)
 
 local Tab = Window:NewTab("Quest")
 local Section = Tab:NewSection("Auto Talk NPC")
