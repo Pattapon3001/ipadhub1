@@ -108,6 +108,24 @@ _G.Ginger = false
 end
 end)
 
+local Tab = Window:NewTab("etc")
+local Section = Tab:NewSection("Boss")
+
+Section:NewToggle("Frezer Yeti", " ", function(state)
+    if state then
+ _G.FYT = true
+ while _G. do
+wait(1)
+for i,v in pairs(game:GetService("Workspace").ServerMonsters:GetDescendants()) do
+      if v.Name == "Yeti" then
+v.HumanoidRootPart:Destroy()
+wait(0.1)
+end
+end
+    else
+_G.FYT = false
+end)
+
 local Tab = Window:NewTab("Quest")
 local Section = Tab:NewSection("Auto Talk NPC")
 
