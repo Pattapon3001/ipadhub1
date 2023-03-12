@@ -134,6 +134,7 @@ end
 end
     else
 _G.FYT = false
+end
 end)
 
 local Tab = Window:NewTab("Quest")
